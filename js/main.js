@@ -1,0 +1,24 @@
+require.config({
+   paths:{
+       jquery:"lib/jquery/dist/jquery",
+       bootstrap:"lib/bootstrap/dist/js/bootstrap",
+       angular:"lib/angular/angular",
+       loadingBar:"lib/angular-loading-bar/src/loading-bar",
+       route:"lib/angular-route/angular-route"
+   },
+    shim:{
+    angular:{
+    exports:'angular'
+    },
+    loadingBar:{
+        deps:['angular']
+    },
+    route:{
+        deps:['angular']    
+    }
+}
+});
+
+require(["modules/app","controllers/movieController","directives/alert","directives/navbar","config"],function(app){
+    app.init();
+});
