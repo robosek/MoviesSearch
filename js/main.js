@@ -4,7 +4,9 @@ require.config({
        bootstrap:"lib/bootstrap/dist/js/bootstrap",
        angular:"lib/angular/angular",
        loadingBar:"lib/angular-loading-bar/src/loading-bar",
-       route:"lib/angular-route/angular-route"
+       route:"lib/angular-route/angular-route",
+       mocks:"lib/angular-mocks/angular-mocks",
+       config:"config"
    },
     shim:{
     angular:{
@@ -15,10 +17,16 @@ require.config({
     },
     route:{
         deps:['angular']    
+    },
+    mocks:{
+        deps:['angular']
+    },
+    config:{
+        deps:['route']
     }
 }
 });
 
-require(["modules/app","controllers/movieController","directives/alert","directives/navbar","config"],function(app){
+require(["modules/app","config","controllers/movieController","directives/alert","directives/navbar"],function(app){
     app.init();
 });

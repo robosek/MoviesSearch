@@ -9,12 +9,12 @@ define(["modules/app", "services/movieHttpFacade"], function (app, movieHttpFaca
                 delete $scope.movie;
                 $scope.error = false;
                 movieHttpFacade.getSampleMovie(title).success(function (data) {
-
-                    $scope.movie = data;
+                    
                     if (data.Response == "False") {
                         $scope.error = true;
                     }
                     else {
+                        $scope.movie = data;
                         $scope.image = (data.Poster === "N/A" ? noImageAddress : data.Poster);
                     }
 
@@ -24,7 +24,6 @@ define(["modules/app", "services/movieHttpFacade"], function (app, movieHttpFaca
                 });
 
             }
-
         }
 
     }]);
