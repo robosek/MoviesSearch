@@ -62,9 +62,13 @@
                       <td><strong>Awards</strong></td>
                       <td>{{movie.Awards}}</td>
                   </tr>
+                    <tr>
+                      <td><strong>Type</strong></td>
+                      <td>{{movie.Type}}</td>
+                  </tr>
                    <tr>
                       <td><strong>Poster</strong></td>
-                      <td><img ng-src="{{movie.Poster}}"></td>
+                      <td><img ng-src="{{image}}"></td>
                   </tr>
               </tbody>
           </table>
@@ -72,7 +76,7 @@
               
           </div>
           <div ng-show="error">
-              <alert topic="Wystąpił błąd" content="Nie można pobrać danych"></alert>
+              <alert topic="Error occurred!" content="Data is not found. Sorry, try again with another movie!"></alert>
           </div>
        
       </div>
