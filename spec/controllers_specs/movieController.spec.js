@@ -1,4 +1,4 @@
-define(['modules/app','controllers/movieController'],function(mocks,controller){
+define(['modules/app','controllers/movieController','services/iconService'],function(mocks,controller,iconService){
        
     describe("Movie controller specification",function(){
     var $scope;

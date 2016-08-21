@@ -10,6 +10,7 @@ require.config({
        route:"../js/lib/angular-route/angular-route",
         'modules/app':'../js/modules/app',
         'services/movieHttpFacade':'../js/services/movieHttpFacade',
+        'services/iconService':'../js/services/iconService',
         'controllers/movieController':"../js/controllers/movieController"
         
     },
@@ -41,7 +42,8 @@ require.config({
 
 require(['jasmine-boot'],function(boot){
    
-    require(['services_specs/movieHttpFacade.spec','controllers_specs/movieController.spec'],function(test){
+    require(['services_specs/movieHttpFacade.spec','services_specs/iconService.spec',
+        'controllers_specs/movieController.spec'],function(test){
         window.onload();
     });
     

@@ -1,5 +1,10 @@
-body { padding-top: 70px; }
+body { padding-top: 70px;}
 
 [ng\:cloak], [ng-cloak], [data-ng-cloak], [x-ng-cloak], .ng-cloak, .x-ng-cloak {
   display: none !important;
+}
+
+.thead-inverse th {
+  color: #fff;
+  background-color: #373a3c;
 }

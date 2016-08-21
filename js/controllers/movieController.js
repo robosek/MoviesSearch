@@ -1,5 +1,6 @@
-define(["modules/app", "services/movieHttpFacade"], function (app, movieHttpFacade) {
-    app.controller("movieController", ["$scope", "movieHttpFacade", function ($scope, movieHttpFacade) {
+define(["modules/app", "services/movieHttpFacade","services/iconService"], function (app, movieHttpFacade) {
+    app.controller("movieController", ["$scope", "movieHttpFacade","iconService",
+        function ($scope, movieHttpFacade,iconService) {
 
         var noImageAddress = "http://www.novelupdates.com/img/noimagefound.jpg";
 
@@ -16,6 +17,8 @@ define(["modules/app", "services/movieHttpFacade"], function (app, movieHttpFaca
                     else {
                         $scope.movie = data;
                         $scope.image = (data.Poster === "N/A" ? noImageAddress : data.Poster);
+                        $scope.icon = iconService.getIcon(data.Type);
+
                     }
 
 
