@@ -14,5 +14,9 @@
 <li>In spec directory download bower packages using command: "bower install"</li>
 <li>Run project</li>
 </ol>
+<h2>Future releases</h2>
+<ul>
+    <li>Autocomplete for serach box</li>
+</ul>
 
 
