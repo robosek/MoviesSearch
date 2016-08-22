@@ -18,5 +18,3 @@
 <ul>
     <li>Autocomplete for serach box</li>
 </ul>
-
-

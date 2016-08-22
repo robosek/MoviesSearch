@@ -6,7 +6,8 @@ require.config({
        loadingBar:"lib/angular-loading-bar/src/loading-bar",
        route:"lib/angular-route/angular-route",
        mocks:"lib/angular-mocks/angular-mocks",
-       config:"config"
+       config:"config",
+       angucomplete:"lib/angucomplete-alt/angucomplete-alt"
    },
     shim:{
     angular:{
@@ -23,7 +24,10 @@ require.config({
     },
     config:{
         deps:['route']
-    }
+    },
+    angucomplete:{
+        deps:['angular']
+     }
 }
 });
 

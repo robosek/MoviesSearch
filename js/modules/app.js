@@ -1,5 +1,5 @@
-define(["angular","loadingBar","route"],function(angular){
-   var app = angular.module("myApp",["angular-loading-bar","ngRoute"]);
+define(["angular","loadingBar","route","angucomplete"],function(angular){
+   var app = angular.module("myApp",["angular-loading-bar","ngRoute","angucomplete-alt"]);
     app.init = function(){
       angular.bootstrap(document,["myApp"]);  
     };

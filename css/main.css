@@ -1,4 +1,4 @@
-body { padding-top: 70px;}
+body { padding-top: 70px; background-color: #e4e4e4;}
 
 [ng\:cloak], [ng-cloak], [data-ng-cloak], [x-ng-cloak], .ng-cloak, .x-ng-cloak {
   display: none !important;
@@ -7,4 +7,12 @@ body { padding-top: 70px;}
 .thead-inverse th {
   color: #fff;
   background-color: #373a3c;
+}
+
+#loading-bar-spinner {
+  top: 80px;
+}
+
+table{
+  background-color: white;
 }

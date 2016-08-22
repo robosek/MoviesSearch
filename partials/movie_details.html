@@ -1,20 +1,31 @@
-  <div class="container" ng-controller="movieController" style="padding-left:150px;padding-right:150px;">
-
+<div class="container" ng-controller="movieController" style="padding-left:150px;padding-right:150px;">
 <!--Start serach form -->
 <form name="searchForm" class="form-horizontal">
   <div class="form-group">
-     <input ng-model="title" required type="text" class="form-control" placeholder="Please insert movie title. For example 'Titanic'">
+      <angucomplete-alt id="members"
+                        placeholder="Please insert movie title. For example 'Titanic'"
+                        pause="400"
+                        selected-object="searchedMovie"
+                        remote-url="http://www.omdbapi.com/?s="
+                        remote-url-data-field="Search"
+                        title-field="Title"
+                        image-field="Poster"
+                        input-class="form-control form-control-small"
+                        input-name="movieSearch"
+                        field-required="true"
+                        minlength="2"
+                        />
   </div>
   <div class="form-group">
-      <button type="submit" class="btn btn-primary" ng-click="search(title,searchForm.$valid )">Search</button>
+      <button type="submit" class="btn btn-primary" ng-click="search(searchedMovie.originalObject.imdbID,searchForm.$valid )">Search</button>
   </div>
 </form>
 <!-- End search form-->
           <div ng-show="!error && movie.Title" >
           <h1 align="center">{{movie.Title}}</h1>
-              
+
           <!-- Start movie table-->
-          <table class="table table-striped table-bordered">
+          <table class="table table-bordered">
               <thead class="thead-inverse">
                   <tr>
                       <th>Parameter</th>
@@ -73,10 +84,10 @@
               </tbody>
           </table>
            <!-- End movie table-->
-              
+
           </div>
           <div ng-show="error">
               <alert topic="Error occurred!" content="Data is not found. Sorry, try again with another movie!"></alert>
           </div>
-       
+
       </div>

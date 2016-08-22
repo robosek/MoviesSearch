@@ -22,19 +22,43 @@ define(['modules/app','services/movieHttpFacade'],function(mocks,service){
         });
        $httpBackend.flush();
     });
+
+        it("Should get info about Titanic movie by Id",function(){
+            $httpBackend.whenGET("http://www.omdbapi.com/?i=tt0120338&y=&plot=full&r=json").respond(function(method,url,data,headers){
+
+                return [200,"{\"Title\":\"Titanic\"}",{}]
+            });
+            movieHttpFacade.getMovieById('tt0120338').success(function(data,status){
+                expect(data.Title).toBe('Titanic');
+                expect(status).toBe(200);
+            });
+            $httpBackend.flush();
+        });
         
     it("Try to get non-existent movie, shoud responde with not found error",function(){
-        $httpBackend.whenGET("http://www.omdbapi.com/?t=Blablablaxasxasbla&y=&plot=full&r=json").respond(function(method,url,data,headers){
+        $httpBackend.whenGET("http://www.omdbapi.com/?t=asdasdasdsad&y=&plot=full&r=json").respond(function(method,url,data,headers){
            
             return [404,"{\"Response\":\"False\"}",{}]
         });
-        movieHttpFacade.getSampleMovie('Blablablaxasxasbla').error(function(data,status){
+        movieHttpFacade.getSampleMovie('asdasdasdsad').error(function(data,status){
             expect(data.Response).toBe('False');
             expect(status).toBe(404);
         });
        $httpBackend.flush();
-    }); 
-  
-});
+    });
+
+        it("Try to get non-existent movie by false id, shoud responde with not found error",function(){
+            $httpBackend.whenGET("http://www.omdbapi.com/?i=xxxxx&y=&plot=full&r=json").respond(function(method,url,data,headers){
+
+                return [404,"{\"Response\":\"False\"}",{}]
+            });
+            movieHttpFacade.getMovieById('xxxxx').error(function(data,status){
+                expect(data.Response).toBe('False');
+                expect(status).toBe(404);
+            });
+            $httpBackend.flush();
+        });
+
+    });
 
 });

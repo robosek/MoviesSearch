@@ -11,7 +11,8 @@ require.config({
         'modules/app':'../js/modules/app',
         'services/movieHttpFacade':'../js/services/movieHttpFacade',
         'services/iconService':'../js/services/iconService',
-        'controllers/movieController':"../js/controllers/movieController"
+        'controllers/movieController':"../js/controllers/movieController",
+        angucomplete:"../js/lib/angucomplete-alt/angucomplete-alt"
         
     },
     shim:{
@@ -35,6 +36,9 @@ require.config({
         },
         'modules/app':{
             deps:['angular','mocks','loadingBar','route']
+        },
+        angucomplete:{
+            deps:['angular']
         }
     }
 });

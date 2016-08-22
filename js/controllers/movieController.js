@@ -1,15 +1,12 @@
 define(["modules/app", "services/movieHttpFacade","services/iconService"], function (app, movieHttpFacade) {
     app.controller("movieController", ["$scope", "movieHttpFacade","iconService",
         function ($scope, movieHttpFacade,iconService) {
-
         var noImageAddress = "http://www.novelupdates.com/img/noimagefound.jpg";
-
-        $scope.search = function (title, isValid) {
-
+        $scope.search = function (id, isValid) {
             if (isValid) {
                 delete $scope.movie;
                 $scope.error = false;
-                movieHttpFacade.getSampleMovie(title).success(function (data) {
+                movieHttpFacade.getMovieById(id).success(function (data) {
                     
                     if (data.Response == "False") {
                         $scope.error = true;
@@ -18,15 +15,13 @@ define(["modules/app", "services/movieHttpFacade","services/iconService"], funct
                         $scope.movie = data;
                         $scope.image = (data.Poster === "N/A" ? noImageAddress : data.Poster);
                         $scope.icon = iconService.getIcon(data.Type);
-
                     }
-
-
                 }).error(function (error) {
                     $scope.error = true;
                 });
 
             }
+            $scope.$broadcast('angucomplete-alt:clearInput');
         }
 
     }]);
