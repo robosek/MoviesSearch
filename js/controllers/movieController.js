@@ -1,7 +1,7 @@
 define(["modules/app", "services/movieHttpFacade","services/iconService","services/imageService"], function (app, movieHttpFacade) {
     app.controller("movieController", ["$scope", "movieHttpFacade","iconService","imageService",
         function ($scope, movieHttpFacade, iconService,imageService) {
-            var noImageAddress = "http://www.novelupdates.com/img/noimagefound.jpg";
+            var noImageAddress = "https://www.novelupdates.com/img/noimagefound.jpg";
 
             $scope.changeImage = function (search) {
                 imageService.changeImageToNotFound(search, "N/A", noImageAddress);
