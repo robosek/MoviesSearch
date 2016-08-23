@@ -4,9 +4,9 @@
 define(['modules/app'],function (app) {
     app.factory('iconService',function () {
 
-        var movieIcon = "http://cliparts.co/cliparts/gce/opL/gceopLa9i.png";
-        var seriesIcon = "https://cdn2.iconfinder.com/data/icons/picons-basic-1/57/basic1-128_tv_television-512.png";
-        var gameIcon = "https://cdn3.iconfinder.com/data/icons/black-easy/512/535112-game_512x512.png";
+        var movieIcon = "http://image.flaticon.com/icons/svg/149/149647.svg";
+        var seriesIcon = "http://image.flaticon.com/icons/svg/167/167018.svg";
+        var gameIcon = "http://image.flaticon.com/icons/svg/181/181515.svg";
 
         var _getIcon = function (kind) {
             switch(kind){

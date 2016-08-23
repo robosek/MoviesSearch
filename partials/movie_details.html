@@ -1,93 +1,93 @@
 <div class="container" ng-controller="movieController" style="padding-left:150px;padding-right:150px;">
-<!--Start serach form -->
-<form name="searchForm" class="form-horizontal">
-  <div class="form-group">
-      <angucomplete-alt id="members"
-                        placeholder="Please insert movie title. For example 'Titanic'"
-                        pause="400"
-                        selected-object="searchedMovie"
-                        remote-url="http://www.omdbapi.com/?s="
-                        remote-url-data-field="Search"
-                        title-field="Title"
-                        image-field="Poster"
-                        input-class="form-control form-control-small"
-                        input-name="movieSearch"
-                        field-required="true"
-                        minlength="2"
-                        />
-  </div>
-  <div class="form-group">
-      <button type="submit" class="btn btn-primary" ng-click="search(searchedMovie.originalObject.imdbID,searchForm.$valid )">Search</button>
-  </div>
-</form>
-<!-- End search form-->
-          <div ng-show="!error && movie.Title" >
-          <h1 align="center">{{movie.Title}}</h1>
+    <!--Start serach form -->
+    <form name="searchForm" class="form-horizontal">
+        <div class="form-group">
+            <angucomplete-alt id="members"
+                              placeholder="Please type movie title. For example 'Titanic'"
+                              pause="400"
+                              selected-object="searchedMovie"
+                              remote-url="http://www.omdbapi.com/?s="
+                              remote-url-data-field="Search"
+                              title-field="Title"
+                              image-field="Poster"
+                              input-class="form-control form-control-small"
+                              input-name="movieSearch"
+                              field-required="true"
+                              minlength="2"
+                              remote-url-response-formatter ="changeImage"/>
+        </div>
+        <div class="form-group">
+            <button type="submit" class="btn btn-primary" ng-click="search(searchedMovie.originalObject.imdbID,searchForm.$valid )">Search</button>
+        </div>
+    </form>
+    <!-- End search form-->
+    <div ng-show="!error && movie.Title">
+        <h1 align="center">{{movie.Title}}</h1>
 
-          <!-- Start movie table-->
-          <table class="table table-bordered">
-              <thead class="thead-inverse">
-                  <tr>
-                      <th>Parameter</th>
-                      <th>Description</th>
-                  </tr>
-              </thead>
-              <tbody>
-                  <tr>
-                      <td><strong>IMDB Rating</strong></td>
-                      <td>{{movie.imdbRating}}</td>
-                  </tr>
-                    <tr>
-                      <td><strong>IMDB Votes</strong></td>
-                      <td>{{movie.imdbVotes}}</td>
-                  </tr>
-                  <tr>
-                      <td><strong>Year</strong></td>
-                      <td>{{movie.Year}}</td>
-                  </tr>
-                  <tr>
-                      <td><strong>Released</strong></td>
-                      <td>{{movie.Released}}</td>
-                  </tr>
-                    <tr>
-                      <td><strong>Runtime</strong></td>
-                      <td>{{movie.Runtime}}</td>
-                  </tr>
-                    <tr>
-                      <td><strong>Genre</strong></td>
-                      <td>{{movie.Genre}}</td>
-                  </tr>
-                   <tr>
-                      <td><strong>Actors</strong></td>
-                      <td>{{movie.Actors}}</td>
-                  </tr>
-                   <tr>
-                      <td><strong>Plot</strong></td>
-                      <td>{{movie.Plot}}</td>
-                  </tr>
-                   <tr>
-                      <td><strong>Country</strong></td>
-                      <td>{{movie.Country}}</td>
-                  </tr>
-                   <tr>
-                      <td><strong>Awards</strong></td>
-                      <td>{{movie.Awards}}</td>
-                  </tr>
-                    <tr>
-                      <td><strong>Type</strong></td>
-                      <td><img src="{{icon}}" width="25" height="25"/> {{movie.Type}}</td>
-                  </tr>
-                   <tr>
-                      <td><strong>Poster</strong></td>
-                      <td><img ng-src="{{image}}" class="img-responsive img-rounded"></td>
-                  </tr>
-              </tbody>
-          </table>
-           <!-- End movie table-->
+        <!-- Start movie table-->
+        <table class="table table-bordered">
+            <thead class="thead-inverse">
+                <tr>
+                    <th>Parameter</th>
+                    <th>Description</th>
+                </tr>
+            </thead>
+            <tbody>
+                <tr>
+                    <td><strong>IMDB Rating</strong></td>
+                    <td>{{movie.imdbRating}}</td>
+                </tr>
+                <tr>
+                    <td><strong>IMDB Votes</strong></td>
+                    <td>{{movie.imdbVotes}}</td>
+                </tr>
+                <tr>
+                    <td><strong>Year</strong></td>
+                    <td>{{movie.Year}}</td>
+                </tr>
+                <tr>
+                    <td><strong>Released</strong></td>
+                    <td>{{movie.Released}}</td>
+                </tr>
+                <tr>
+                    <td><strong>Runtime</strong></td>
+                    <td>{{movie.Runtime}}</td>
+                </tr>
+                <tr>
+                    <td><strong>Genre</strong></td>
+                    <td>{{movie.Genre}}</td>
+                </tr>
+                <tr>
+                    <td><strong>Actors</strong></td>
+                    <td>{{movie.Actors}}</td>
+                </tr>
+                <tr>
+                    <td><strong>Plot</strong></td>
+                    <td>{{movie.Plot}}</td>
+                </tr>
+                <tr>
+                    <td><strong>Country</strong></td>
+                    <td>{{movie.Country}}</td>
+                </tr>
+                <tr>
+                    <td><strong>Awards</strong></td>
+                    <td>{{movie.Awards}}</td>
+                </tr>
+                <tr>
+                    <td><strong>Type</strong></td>
+                    <td><img src="{{icon}}" width="25" height="25" /> {{movie.Type}}</td>
+                </tr>
+                <tr>
+                    <td><strong>Poster</strong></td>
+                    <td><img ng-src="{{image}}" class="img-responsive img-rounded"></td>
+                </tr>
+            </tbody>
+        </table>
+        <!-- End movie table-->
 
-          </div>
-          <div ng-show="error">
-              <alert topic="Error occurred!" content="Data is not found. Sorry, try again with another movie!"></alert>
-          </div>
+    </div>
+    <div ng-show="error">
+        <alert topic="Error occurred!" content="Data is not found. Sorry, try again with another movie!"></alert>
+    </div>
 
-      </div>
+</div>

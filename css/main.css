@@ -16,3 +16,7 @@ body { padding-top: 70px; background-color: #e4e4e4;}
 table{
   background-color: white;
 }
+
+.angucomplete-image-default {
+     background-image: url('http://www.novelupdates.com/img/noimagefound.jpg');
+}
