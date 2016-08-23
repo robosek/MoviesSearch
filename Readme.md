@@ -1,4 +1,6 @@
 <h1>Simple movies search app</h1>
+<h2>Address</h2>
+<p>https://robosek.github.io/MoviesSearch/</p>
 <h2>Used frameworks</h2>
 <ul>
 <li>Angular</li>
