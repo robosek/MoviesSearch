@@ -12,6 +12,10 @@ js/directives
 js/modules
 js/services
 js/config.js
-spec/lib
+spec
+SpecRunner.html
+bower.json
+.bowerrc
+js/main.js
 .idea/
 Web.config
