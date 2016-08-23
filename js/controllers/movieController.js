@@ -1,12 +1,18 @@
-define(["modules/app", "services/movieHttpFacade","services/iconService"], function (app, movieHttpFacade) {
-    app.controller("movieController", ["$scope", "movieHttpFacade","iconService",
-        function ($scope, movieHttpFacade,iconService) {
-        var noImageAddress = "http://www.novelupdates.com/img/noimagefound.jpg";
-        $scope.search = function (id, isValid) {
-            if (isValid) {
-                delete $scope.movie;
-                $scope.error = false;
-                movieHttpFacade.getMovieById(id).success(function (data) {
+define(["modules/app", "services/movieHttpFacade","services/iconService","services/imageService"], function (app, movieHttpFacade) {
+    app.controller("movieController", ["$scope", "movieHttpFacade","iconService","imageService",
+        function ($scope, movieHttpFacade, iconService,imageService) {
+            var noImageAddress = "http://www.novelupdates.com/img/noimagefound.jpg";
+
+            $scope.changeImage = function (search) {
+                imageService.changeImageToNotFound(search, "N/A", noImageAddress);
+                return search;
+            }
+                
+            $scope.search = function (id, isValid) {
+                if (isValid) {
+                    delete $scope.movie;
+                    $scope.error = false;
+                    movieHttpFacade.getMovieById(id).success(function (data) {
                     
                     if (data.Response == "False") {
                         $scope.error = true;
@@ -20,7 +26,7 @@ define(["modules/app", "services/movieHttpFacade","services/iconService"], funct
                     $scope.error = true;
                 });
 
-            }
+                }
             $scope.$broadcast('angucomplete-alt:clearInput');
         }
 
