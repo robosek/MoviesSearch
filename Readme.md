@@ -14,7 +14,12 @@
 <li>In spec directory download bower packages using command: "bower install"</li>
 <li>Run project</li>
 </ol>
+<h2>Change log</h2>
+<ul>
+    <l1>2016-08-23 - Autocomplete for search box</l1>
+    <li>2016-08-18 - First version of simple movie search application</li>
+</ul>
 <h2>Future releases</h2>
 <ul>
-    <li>Autocomplete for serach box</li>
+    <li><s>Autocomplete for serach box</s></li>
 </ul>
