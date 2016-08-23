@@ -7,6 +7,11 @@ js/lib/angular-loading-bar
 js/lib/angular-angular
 js/lib/angucomplete-alt
 js/lib/angular
+js/controllers
+js/directives
+js/modules
+js/services
+js/config.js
 spec/lib
 .idea/
 Web.config
