@@ -16,8 +16,8 @@
 </ol>
 <h2>Change log</h2>
 <ul>
-    <l1>2016-08-23 - Autocomplete for search box</l1>
-    <li>2016-08-18 - First version of simple movie search application</li>
+    <li>2016-08-23 - Autocomplete for search box</li>
+    <li>2016-08-17 - First version of simple movie search application</li>
 </ul>
 <h2>Future releases</h2>
 <ul>
