@@ -1,5 +1,12 @@
 build
-js/lib
+js/lib/jquery
+js/lib/bootstrap
+js/lib/angular-route
+js/lib/angular-mocks
+js/lib/angular-loading-bar
+js/lib/angular-angular
+js/lib/angucomplete-alt
+js/lib/angular
 spec/lib
 .idea/
 Web.config
