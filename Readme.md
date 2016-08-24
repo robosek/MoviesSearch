@@ -8,6 +8,7 @@
 <li>jQuery</li>
 <li>RequireJS</li>
 <li>Jasmine</li>
+<li>Karma</li>
 </ul>
 <h2>Installation</h2>
 <ol type="1">
@@ -18,6 +19,7 @@
 </ol>
 <h2>Change log</h2>
 <ul>
+    <li>2016-08-24 - Integration with Karma</li>
     <li>2016-08-23 - Autocomplete for search box</li>
     <li>2016-08-17 - First version of simple movie search application</li>
 </ul>
