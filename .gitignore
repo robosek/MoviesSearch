@@ -18,4 +18,5 @@ bower.json
 .bowerrc
 js/main.js
 .idea/
+karma.conf.js
 Web.config
