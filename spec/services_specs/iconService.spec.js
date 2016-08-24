@@ -12,9 +12,9 @@ define(['modules/app','services/iconService'],function(app,iconService){
 
         }));
 
-        var movieIcon = "http://image.flaticon.com/icons/svg/149/149647.svg";
-        var seriesIcon = "http://image.flaticon.com/icons/svg/167/167018.svg";
-        var gameIcon = "http://image.flaticon.com/icons/svg/181/181515.svg";
+        var movieIcon = "images/movie.svg";
+        var seriesIcon = "images/series.svg";
+        var gameIcon = "images/game.svg";
 
         it("Should return movies icon when type is movie",function(){
            var iconUrl =  iconService.getIcon("movie");

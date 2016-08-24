@@ -4,9 +4,9 @@
 define(['modules/app'],function (app) {
     app.factory('iconService',function () {
 
-        var movieIcon = "http://image.flaticon.com/icons/svg/149/149647.svg";
-        var seriesIcon = "http://image.flaticon.com/icons/svg/167/167018.svg";
-        var gameIcon = "http://image.flaticon.com/icons/svg/181/181515.svg";
+        var movieIcon = "images/movie.svg";
+        var seriesIcon = "images/series.svg";
+        var gameIcon = "images/game.svg";
 
         var _getIcon = function (kind) {
             switch(kind){

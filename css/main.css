@@ -10,7 +10,11 @@ body { padding-top: 70px; background-color: #e4e4e4;}
 }
 
 #loading-bar-spinner {
-  top: 80px;
+  padding-top: 55px;
+}
+
+#loading-bar .bar {
+  top: 51px;
 }
 
 table{
@@ -18,6 +22,6 @@ table{
 }
 
 .angucomplete-image-default {
-   background-image: url("http://www.novelupdates.com/img/noimagefound.jpg");
+   background-image: url("images/noimagefound.jpg");
 }
 

@@ -1,5 +1,5 @@
-﻿define(['modules/app', 'services/imageService'], function (app, service) {
-
+define(['modules/app', 'services/imageService'], function (app, service) {
+    
     var imageService;
 
     describe("Image service specification", function () {

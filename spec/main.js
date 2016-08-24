@@ -14,7 +14,6 @@ require.config({
         'services/imageService':'../js/services/imageService',
         'controllers/movieController':"../js/controllers/movieController",
         angucomplete:"../js/lib/angucomplete-alt/angucomplete-alt"
-        
     },
     shim:{
         angular:{
